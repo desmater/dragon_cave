@@ -1,8 +1,9 @@
 #! /usr/bin/python
 # --Filename: creatures.py--
 # define the classes creature, monsters and player
+import random
 
-FILE_VERSION = "0.0.1"
+FILE_VERSION = "0.3"
 
 class Creature(object):
     """
@@ -11,13 +12,15 @@ class Creature(object):
     Attributes: hp, name
     """
     
-    def __init__(self, hp, name, atk):
+    def __init__(self, hp, name, atk, level = 1):
         self.hp = hp
         self.name = name
         self.atk = atk
+        self.level = level
         
     def damage(self, weapon_atk = 0):
-        return self.atk + (weapon_atk * 1.5)
+        return self.atk + (weapon_atk * 1.5) + random.randrange(0,6)
+        
     
     def print_self(self):
         print self.hp
@@ -28,7 +31,9 @@ class Monster(Creature):
     pass
     
 class Player(Creature):
-    pass
+    
+    def status_information(self):
+        print "Name: %s \tHP: %d \tLevel: %d\n" %(self.name, self.hp, self.level)
     
     
     

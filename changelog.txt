@@ -3,3 +3,9 @@ Upate 05/26/2013:
 added the "fight"-system
 added the first and second room (about 80% done both)
 Upgraded GAME_VERSION to 0.2
+
+Update 05/27/2013:
+added die-function
+added help-function
+set GAME_VERSION to 0.3
+

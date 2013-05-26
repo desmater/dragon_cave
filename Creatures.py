@@ -9,7 +9,7 @@ class Creature(object):
     """
     The parent class for monsters and player
     
-    Attributes: hp, name
+    Attributes: hp, name, atk, level
     """
     
     def __init__(self, hp, name, atk, level = 1):

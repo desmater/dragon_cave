@@ -5,7 +5,7 @@ import Creatures
 import Main
 import random
 
-FILE_VERSION = "0.2"
+FILE_VERSION = "0.3"
 
 
 class Map(object):
@@ -20,6 +20,7 @@ class Map(object):
         self.start_room(player)
         
     def start_room(self, player):
+        option_set = ("creeping", "fight")
         gobblin = Creatures.Monster(50, "Gobblin", 3)
         player.status_information()
         
@@ -40,13 +41,16 @@ What you want to do? (Tipp: type in help for avalible options)
                     print "He noticed you. Now you have to fight!"
                     Main.fight(gobblin, player)
                     break
+            elif user_action == "help":
+                Main.help(option_set)
             else:
                 print "Unkown option! Try again!"
                 
         self.zentauer_room(player)
         
     def zentauer_room(self, player):
-        zentauer = Creatures.Monster(70, "Zentauer", 5)
+        option_set = ("speak", "fight")
+        zentauer = Creatures.Monster(70, "Zentauer", 15)
         player.status_information()
         
         print """
@@ -65,6 +69,12 @@ So don't make him angry!
                     print "It's not your day! He want's to fight you!"
                     Main.fight(zentauer, player)
                     break
+            elif user_action == "fight":
+                print "Let the fight beginn!"
+                Main.fight(zentauer, player)
+                break                
+            elif user_action == "help":
+                Main.help(option_set)       
             else:
                 print "Unkown option! Try again!"
         

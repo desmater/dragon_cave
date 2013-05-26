@@ -1,0 +1,5 @@
+Upate 05/26/2013:
+
+added the "fight"-system
+added the first and second room (about 80% done both)
+Upgraded GAME_VERSION to 0.2
